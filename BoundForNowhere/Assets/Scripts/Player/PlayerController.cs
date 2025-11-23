@@ -29,13 +29,21 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        readForJump = true;
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         playerInput = new InputSystem_Actions();
+
         playerInput.Player.Enable();
         playerInput.Player.Jump.performed += Jump;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Player.Jump.performed -= Jump;
+        playerInput.Player.Disable();
     }
 
     void Update()
@@ -60,7 +68,10 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = orientation.forward * movementInput.y + orientation.right * movementInput.x;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 5f, ForceMode.Force);
+        if(isGrounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 5f, ForceMode.Force);
+        else if(!isGrounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 5f * airMultiplier, ForceMode.Force);
     }
 
     private void SpeedControl()
@@ -76,10 +87,19 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed) return;
+
+        if (readForJump && isGrounded)
         {            
+            readForJump = false;
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            Invoke(nameof(ResetJump), jumpCoolDown);
         }
+    }
+
+    void ResetJump()
+    {
+        readForJump = true;
     }
 }
