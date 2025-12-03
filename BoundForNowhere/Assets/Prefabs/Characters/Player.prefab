@@ -72,6 +72,8 @@ GameObject:
   m_Component:
   - component: {fileID: 248304696717337175}
   - component: {fileID: 3130538412894143817}
+  - component: {fileID: 8241386846603495730}
+  - component: {fileID: 6783867152589160309}
   - component: {fileID: 4187023673122156950}
   m_Layer: 0
   m_Name: Player
@@ -120,6 +122,32 @@ MonoBehaviour:
   groundLM:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &8241386846603495730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472558378045540273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503e4a684925690469b86bae5c519488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMechanics
+--- !u!114 &6783867152589160309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472558378045540273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d319d0a2d84fa934bb4ea1110599801a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerItemManager
+  currItems: []
+  handPoint: {fileID: 0}
 --- !u!54 &4187023673122156950
 Rigidbody:
   m_ObjectHideFlags: 0
