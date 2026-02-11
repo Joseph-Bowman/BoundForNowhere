@@ -17,8 +17,6 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private Transform itemSpriteParent;
     private List<Image> sprites = new List<Image>();
 
-    public ItemBase TempItemToAdd; //Temp Delete Later
-
     //Enables Input
     private void OnEnable()
     {
@@ -35,10 +33,7 @@ public class LevelUI : MonoBehaviour
     }
 
     //Ensures the game is not paused on start
-    private void Start() {  Resume();
-
-        SetUISpriteToItemSprite(TempItemToAdd);
-    } 
+    private void Start() {  Resume(); } 
 
     void PauseGame(InputAction.CallbackContext context)
     {
@@ -48,6 +43,11 @@ public class LevelUI : MonoBehaviour
             if (isPaused) { Resume(); }
             else { Pause(); }
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     //Resumes the game and hides the UI and cursor

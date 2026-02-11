@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7476434653682826867}
   - component: {fileID: 3977045414567394279}
   - component: {fileID: 6684573912086630787}
+  - component: {fileID: 2971803927404229803}
   m_Layer: 0
   m_Name: Pot_TallSkiny
   m_TagString: Untagged
@@ -88,4 +89,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2971803927404229803
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325556171211436680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8702237353499461893, guid: 37092c4d2e54e2c4f883951df9782e1e, type: 3}

@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 4187023673122156950}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503e4a684925690469b86bae5c519488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMechanics
+  currWeapon: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!114 &6783867152589160309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerItemManager
   currItems: []
   handPoint: {fileID: 0}
+  playerMech: {fileID: 0}
+  levelUI: {fileID: 0}
 --- !u!54 &4187023673122156950
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -264,6 +268,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &6146367888471793766
 CapsuleCollider:
