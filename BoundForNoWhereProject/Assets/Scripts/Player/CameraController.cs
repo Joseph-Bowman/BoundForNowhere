@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
     //Camera input
     InputSystem_Actions playerInput;
     Vector2 mouseInput;
+    [SerializeField] PlayerSettingsData playerSettingsData;
 
     //Camera movement sensitivity
     [SerializeField] private float sensX, sensY;

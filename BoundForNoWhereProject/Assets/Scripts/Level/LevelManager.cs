@@ -14,10 +14,8 @@ public class LevelManager : MonoBehaviour
 
     //How many levels per stage in the game
     [SerializeField] private int levelsPerStage = 4;
-
-    void Start(){
-        //GenerateLevels();
-    }
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private LevelUI inGameUI;
 
     void GenerateLevels()
     {
@@ -32,11 +30,6 @@ public class LevelManager : MonoBehaviour
         outputLevels.AddRange(GetRandomLevels(stage2, levelsPerStage));
         outputLevels.AddRange(GetRandomLevels(stage3, levelsPerStage));
         outputLevels.AddRange(GetRandomLevels(stage4, levelsPerStage));
-
-        foreach (GameObject levelPrefab in outputLevels)
-        {
-            Instantiate(levelPrefab);
-        }
     }
 
     private List<GameObject> GetLevelDifficulty(Level stage)
@@ -73,5 +66,21 @@ public class LevelManager : MonoBehaviour
         return result;
     }
 
+    void GetCurrentLevel()
+    {
+        
+    }
 
+    void GetNextLevel()
+    {
+        
+    }
+
+    void LoadLevel(GameObject LevelToLoad)
+    {
+        if (gameManager.levelFinished)
+        {
+            inGameUI.EnablePrompt();
+        }
+    }
 }

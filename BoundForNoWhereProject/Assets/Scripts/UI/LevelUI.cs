@@ -7,6 +7,7 @@ public class LevelUI : MonoBehaviour
 {
     [Header("UI Objects")]
     [SerializeField] private GameObject pauseUI;
+    private GameObject prompt;
     private bool isPaused;
 
     //Input Settings
@@ -70,11 +71,17 @@ public class LevelUI : MonoBehaviour
         pauseUI.SetActive(true);
     }
 
+    //Gets the currents item sprite and instantiates a image using the item data's image
     public void SetUISpriteToItemSprite(ItemBase item)
     {
         GameObject newItemSprite = Instantiate(imagePrefab, itemSpriteParent);
         Image itemSprite = newItemSprite.GetComponent<Image>();
         itemSprite.sprite = item.itemSprite;
         sprites.Add(itemSprite);
+    }
+
+    public void EnablePrompt()
+    {
+        prompt.SetActive(true);
     }
 }
