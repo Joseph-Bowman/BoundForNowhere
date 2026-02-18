@@ -14,8 +14,13 @@ public class LevelManager : MonoBehaviour
 
     //How many levels per stage in the game
     [SerializeField] private int levelsPerStage = 4;
-    [SerializeField] private GameManager gameManager;
+    private GameManager gameManager;
     [SerializeField] private LevelUI inGameUI;
+
+    void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
 
     void GenerateLevels()
     {

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &822652985810677179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6028691807190113140}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6028691807190113140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822652985810677179}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.6974174, z: -0, w: 0.71666527}
+  m_LocalPosition: {x: -0.523, y: -0.372, z: 0.693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99491730377743622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3302637429291426140
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d9bd43e44509746a3cbb261564d4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayer
-  cameraPos: {fileID: 0}
+  Player: {fileID: 472558378045540273, guid: 6d3995469c4354444b0168186ff624ef, type: 3}
+  cameraPosition: {fileID: 0}
 --- !u!1 &6458665180999240120
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +110,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6028691807190113140}
   m_Father: {fileID: 2798008468562856740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5258287902345578834
@@ -114,10 +147,10 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -163,7 +196,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -196,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24e89daffaf43441a4a20e985f5b84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  sensX: 25
-  sensY: 25
+  playerSettingsData: {fileID: 0}
+  sensX: 10
+  sensY: 10
   orientation: {fileID: 0}

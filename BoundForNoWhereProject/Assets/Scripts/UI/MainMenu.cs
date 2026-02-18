@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private string sceneName;
     //Object References
     private bool optionsOpen;
+    [SerializeField] private AudioClip OnClick;
+    private AudioSource audioSource;
 
     [Header("Options")]
     //Object References
@@ -29,8 +31,14 @@ public class MainMenu : MonoBehaviour
     }
 
     private int resolutionIndex; // Used to keep current and future resolution indexed increased on switch
+    
 
-    private void Start() { if(resolutionText != null){ resolutionText.text = $"{Screen.width} X {Screen.height}"; }  } // Sets the text to the current resolution
+    private void Start() 
+    { 
+        if(resolutionText != null){ resolutionText.text = $"{Screen.width} X {Screen.height}"; } 
+
+        audioSource = GetComponent<AudioSource>();
+    } // Sets the text to the current resolution
 
     //
     //Menu Buttons -- Line 40 <-> 52
@@ -49,6 +57,11 @@ public class MainMenu : MonoBehaviour
     public void OnQuit() { YouSure.SetActive(true); } //Validates if the player really wants to quit
 
     public void Quit() { Application.Quit(); } //Closes the game 
+
+    public void PlayClickSound()
+    {
+        audioSource.PlayOneShot(OnClick, 1);
+    }
 
     //
     //SettingsOptions -- Line 58 <-> 123123

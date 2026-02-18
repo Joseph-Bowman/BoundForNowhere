@@ -5,7 +5,7 @@ public class UIAnimationHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     private Animator anim;
     private AudioSource audioSource;
-    [SerializeField] private AudioClip UIHoverEnter, UIHoverExit;
+    [SerializeField] private AudioClip UIHover;
 
     void Awake()
     {
@@ -16,12 +16,12 @@ public class UIAnimationHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerEnter(PointerEventData eventData)
     {
         anim.SetBool("isHovered", true);
-        audioSource.PlayOneShot(UIHoverEnter, 1);
+        audioSource.PlayOneShot(UIHover, 1);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         anim.SetBool("isHovered", false);
-        audioSource.PlayOneShot(UIHoverExit, 1);
+        audioSource.PlayOneShot(UIHover, 1);
     }
 }
